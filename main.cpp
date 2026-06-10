@@ -115,8 +115,64 @@ main() {
 
 
 
+            int wygrana = 0;
+
+            for (int f = 0; f < 2; f++) {
+
+                char znak;
+                if (f == 0) {
+                    znak = 'O';
+                } else {
+                    znak = 'X';
+                }
 
 
+                for (int y = 0; y < 3; y++) {
+                    int wskaznik = 0;
+                    for (int x = 0; x < 3; x++) {
+                        if (tab[x][y] == znak) {
+                            wskaznik++;
+                        }
+                    }
+
+                    if (wskaznik == 3) {
+                        wygrana  = 1;
+                    }
+
+                }
+
+
+                for (int x = 0; x < 3; x++) {
+                        int wskaznik = 0;
+                    for (int y = 0; y < 3; y++) {
+                        if (tab[x][y] == znak) {
+                            wskaznik++;
+                        }
+
+                    if (wskaznik == 3) {
+                        wygrana = 1;
+                    }
+                }
+            }
+
+
+            if (tab[1][1] == znak && tab[2][2] == znak && tab[3][3] == 0 || tab[3][1] == znak && tab[2][2] == znak && tab[1][3] == znak) {
+                wygrana = 1;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+            }
 
             kolej++;
         }
